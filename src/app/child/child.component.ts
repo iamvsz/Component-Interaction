@@ -6,7 +6,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-  @Input() count! : number;
+  count : number = 0;
   @Output() countChanged : EventEmitter<number> = new EventEmitter();
 
   constructor() { }
