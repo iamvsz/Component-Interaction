@@ -1,9 +1,6 @@
 <div class="container">
   <div class="row">
     <h1>Welcome to {{title}} !</h1>
-    <button class="btn btn-primary" (click)="Increment()">Increment</button>
-    <button class= "btn btn-danger" (click)="Decrement()">Decrement</button>
-    <hr>
-    <app-child  [vishal]="counter"></app-child>
+    <app-child  [count]="counter" (countChanged)="countChangedHandler($event)"></app-child>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -6,11 +6,22 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-  @Input('vishal') count! : number;
+  @Input() count! : number;
+  @Output() countChanged : EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  Increment() {
+    this.count++;
+    this.countChanged.emit(this.count);
+  }
+
+  Decrement() {
+    this.count--;
+    this.countChanged.emit(this.count);
   }
 
 }
