@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'component-interaction';
+  counter: number = 0;
+
+  Increment() {
+    this.counter++;
+  }
+
+  Decrement() {
+    this.counter--;
+  }
 }
